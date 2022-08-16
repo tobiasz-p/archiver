@@ -1,0 +1,11 @@
+%header.d-flex.flex-wrap.justify-content-center.py-3.mb-4.border-bottom
+  = link_to root_path, class: "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none" do
+    %span.fs-4 Zipper
+  %ul.nav.nav-pills
+    - if current_user
+      %li.nav-item= link_to 'Lista plików', root_path, class: ['nav-link', ('active' if current_page?(root_path))]
+      %li.nav-item= link_to 'Dodaj plik', new_attachment_path, class: ['nav-link', ('active' if current_page?(new_attachment_path))]
+      %li.nav-item= link_to 'Wyloguj się', logout_path, method: :delete, class: 'nav-link'
+    - else
+      %li.nav-item= link_to 'Zaloguj się', login_path, class: 'btn btn-primary'
+      %li.nav-item= link_to 'Utwórz konto', new_user_path, class: 'nav-link'

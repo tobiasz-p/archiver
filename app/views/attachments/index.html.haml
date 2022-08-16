@@ -1,0 +1,15 @@
+!= pagy_bootstrap_nav(@pagy)
+%table.table
+  %thead
+    %tr
+      %th Data utworzenia
+      %th Nazwa pliku
+      %th Rozmiar
+      %th Link
+  %tbody
+    - @attachments.each do |attachment|
+      %tr
+        %td= attachment.created_at.to_date
+        %td= attachment.file.filename
+        %td= number_to_human_size(attachment.file.byte_size)
+        %td= link_to 'Pobierz', attachment.file

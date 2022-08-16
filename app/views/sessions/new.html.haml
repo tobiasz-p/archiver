@@ -1,0 +1,5 @@
+%h1 Logowanie
+= simple_form_for :login do |f|
+  = f.input :email, label: "Email", required: true
+  = f.input :password, label: "Hasło", required: true
+  = f.button :submit, "Zaloguj", class: "btn-primary"

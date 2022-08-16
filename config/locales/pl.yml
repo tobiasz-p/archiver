@@ -1,0 +1,31 @@
+pl:
+  activerecord:
+    attributes:
+      user:
+        password: Hasło
+        password_confirmation: Potwierdzenie hasła
+    errors:
+      messages:
+        record_invalid: 'Rekord nieprawidłowy: %{errors}'
+      models:
+        user:
+          attributes:
+            email:
+              invalid: niepoprawny
+              blank: jest pusty
+              taken: został już wykorzystany
+              too_short: zbyt krótki (minimum 4 znaki)
+              too_long: zbyt długi (maximum 254 znaki)
+            password:
+              invalid: niepoprawne
+              blank: nie może być puste
+            password_confirmation:
+              confirmation: musi się zgadzać z podanym hasłem
+        attachment:
+          attributes:
+            user:
+              required: Nie wskazano użytkownika, lub użytkownik nie istnieje
+        authentication_token:
+          attributes:
+            token:
+              blank: jest pusty

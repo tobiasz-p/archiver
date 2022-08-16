@@ -1,0 +1,5 @@
+= simple_form_for @attachment do |f|
+  = f.input :file, input_html: { multiple: "true", name: "attachment[files][]" },
+    label: "Dodaj pliki",
+    hint: "Pliki zostaną skompresowane do jednego archiwum w formacie zip"
+  = f.button :submit, "Stwórz archiwum", class: "btn-primary"
